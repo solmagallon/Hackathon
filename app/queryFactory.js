@@ -5,7 +5,7 @@
 
 	queryFactory.$inject = ['$http', '$q', '$log']
 
-	function queryFactory($http, $p, $log){
+	function queryFactory($http, $q, $log){
 		var service = {
 			getData: getData
 		}
@@ -20,7 +20,7 @@
 			}).then(function(response){
 				if (typeof response.data === 'object'){
 					toastr.success('Data retrieved successfully.');
-					defer.resolve(rsponse);
+					defer.resolve(response);
 				} else {
 					toastr.warning('No data retrieved.')
 				}
@@ -30,7 +30,7 @@
 				defer.reject(error);
 			});
 
-			return service;
+			return defer.promise;
 		}
 	}
 })();
