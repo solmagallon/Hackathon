@@ -1,3 +1,5 @@
 (function(){
-	var app = anuglar.module('app', []);
+	var app = angular.module('app', []);
 })();
+
+// google api key AIzaSyAGGi10zMvYlSfc8m_VsOIuesj-D1i6HeM

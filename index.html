@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" ng-app="app">
         <head>
             <meta charset="UTF-8">
             <title></title>
@@ -11,7 +11,8 @@
             <!-- endinject -->
         </head>
 
-        <body>
+        <body ng-controller="appController as vm">
+
             <!-- bower:js -->
             <script src="bower_components/angular/angular.js"></script>
             <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -20,6 +21,8 @@
             <script src="bower_components/toastr/toastr.js"></script>
             <!-- endbower -->
             <!-- inject:js -->
+            <script src="/app/app.js"></script>
+            <script src="/app/appController.js"></script>
             <!-- endinject -->
         </body>
 </html>
