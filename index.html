@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 
@@ -115,14 +114,14 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="service row" ng-repeat="trail in vm.trails">
                 
-                <div class="col-lg-3 col-md-6 text-center" ng-repeat="trail in vm.trails">
+                <div class="text-center">
                     <div class="service-box">
                         <i class="">{{trail.city}}, {{trail.state}}</i>
                         <h3>{{trail.name}}</h3>
                         <p class="text-muted">
-                            <iframe width="320" height="180" ng-src="{{vm.trustSrc(trail.selectedVideo)}}" frameborder="0" allowfullscreen></iframe> 
+                            <iframe width="420" height="280" ng-src="{{vm.trustSrc(trail.selectedVideo)}}" frameborder="0" allowfullscreen></iframe> 
                         </p>
                         <div class="row">
                             <div ng-repeat="video in trail.videos" >
