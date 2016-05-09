@@ -12,7 +12,14 @@
     <title>Origin Hackathon Project</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/bootstrap.min.css" type="text/css">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -67,22 +74,18 @@
                      <form>
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="name"
+                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="vm.name"
                       
                         <div class="form-group">
                             <label for="city"></label>
-                            <input type="text" class="form-control" id="city" placeholder="city" ng-model="city">
+                            <input type="text" class="form-control" id="city" placeholder="city" ng-model="vm.city">
                        
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="state"
+                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="vm.state"
                      
-                        <div class="form-group">
-                            <label for="radius"></label>
-                            <input type="text" class="form-control" id="country" placeholder="search radius (miles)">
-                        </div>
                         <div>                     
-                            <a href="#about" class="btn btn-default btn-xl page-scrollb">Take a Hike</a>
+                            <a href="#about" ng-click="vm.getTrails()" class="btn btn-default btn-xl page-scrollb">Take a Hike</a>
                         </div>
                         </form>
                         </div>
@@ -318,7 +321,9 @@
             <!-- inject:js -->
             <script src="/app/app.js"></script>
             <script src="/app/appController.js"></script>
+            <script src="/app/intercepterFactory.js"></script>
             <script src="/app/queryFactory.js"></script>
+            <script src="/app/trailFactory.js"></script>
             <!-- endinject -->
         </body>
 >>>>>>> origin/master

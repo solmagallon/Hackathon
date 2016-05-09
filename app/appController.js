@@ -3,8 +3,8 @@
 	var app = angular.module('app');
 	app.controller('appController', appController);
 
-	appController.$inject = ['queryFactory', '$log'];
-	function appController(queryFactory, $log){
+	appController.$inject = ['queryFactory', 'trailFactory', '$log'];
+	function appController(queryFactory, trailFactory, $log){
 		var vm = this;
 		const YOUTUBE_KEY = "&key=AIzaSyAGGi10zMvYlSfc8m_VsOIuesj-D1i6HeM";
 		const YOUTUBE_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&type=video&maxResults=8";
@@ -25,7 +25,16 @@
 			});
 		}
 		
-		//https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&order=viewCount&q=skateboarding+dog&type=video&videoDefinition=high&_h=1&
+		vm.getTrails = function(){
+			trailFactory.getData(vm.name, vm.city, vm.state)
+			.then(function(response){
+				vm.trails = response;
+				console.log(response)
+			}, function(error){
+				$log.error("Could not get data.")
+			})
+		}
+
 		// on load query for all youtube channels that match 'hiking'
 		vm.dataToVar(query);
 	}
