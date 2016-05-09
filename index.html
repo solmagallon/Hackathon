@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en">
 
 <head>
 
@@ -12,14 +12,7 @@
     <title>Origin Hackathon Project</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
-
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
-    <!-- endbower -->
-
-    <!-- inject:css -->
-    <!-- endinject -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -41,7 +34,7 @@
 
 </head>
 
-<body id="page-top" ng-controller="appController as vm">
+<body id="page-top">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -50,10 +43,6 @@
             </div>
         </div>
     </nav>
-
-<video controls>
-    <source src="https://youtu.be/-7U3OjEK4EM" type="video/mp4">
-</video>
 
     <header>
         <div class="header-content">
@@ -78,18 +67,22 @@
                      <form>
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="vm.name"
+                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="name"
                       
                         <div class="form-group">
                             <label for="city"></label>
-                            <input type="text" class="form-control" id="city" placeholder="city" ng-model="vm.city">
+                            <input type="text" class="form-control" id="city" placeholder="city" ng-model="city">
                        
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="vm.state"
+                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="state"
                      
+                        <div class="form-group">
+                            <label for="radius"></label>
+                            <input type="text" class="form-control" id="country" placeholder="search radius (miles)">
+                        </div>
                         <div>                     
-                            <a href="#about" ng-click="vm.getTrails()" class="btn btn-default btn-xl page-scrollb">Take a Hike</a>
+                            <a href="#about" class="btn btn-default btn-xl page-scrollb">Take a Hike</a>
                         </div>
                         </form>
                         </div>
@@ -118,19 +111,15 @@
         <div class="container">
             <div class="row">
                 
-                <div class="col-lg-3 col-md-6 text-center" ng-repeat="trail in vm.trails">
+                <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="">{{trail.city}}, {{trail.state}}</i>
-                        <h3>{{trail.name}}</h3>
-                        <p class="text-muted">
-                            <video controls> 
-                                <source ng-src="{{vm.trustSrc(trail.videos[0].id.videoId)}}">
-                            </video>
-                        </p>
+                        <i class=""></i>
+                        <h3>TRAIL NAME</h3>
+                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
                     </div>
                 </div>
                 
-               <!--  <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class=""></i>
                         <h3>TRAIL NAME</h3>
@@ -153,11 +142,11 @@
                         <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
                     </div>
 
-                </div> -->
+                </div>
             </div>
         </div>    
 
-<!--         <div class="container">
+        <div class="container">
             <div class="row">
                 
                 <div class="col-lg-3 col-md-6 text-center">
@@ -193,7 +182,7 @@
 
                 </div>
             </div>
-        </div>     -->
+        </div>    
     </section>
 
     
@@ -273,6 +262,13 @@
 </div>
 
 
+
+
+
+
+
+
+
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -281,29 +277,49 @@
         </div>
     </section>
 
-        <!-- bower:js -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/toastr/toastr.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <!-- endbower -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-        <!-- Plugin JavaScript -->
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/jquery.fittext.js"></script>
-        <script src="js/wow.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-        <!-- inject:js -->
-        <script src="/app/app.js"></script>
-        <script src="/app/appController.js"></script>
-        <script src="/app/intercepterFactory.js"></script>
-        <script src="/app/queryFactory.js"></script>
-        <script src="/app/trailFactory.js"></script>
-        <!-- endinject -->
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="js/creative.js"></script>
-    </body>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+=======
+    <html lang="en" ng-app="app">
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+            <!-- bower:css -->
+            <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+            <!-- endbower -->
+
+            <!-- inject:css -->
+            <!-- endinject -->
+        </head>
+
+        <body ng-controller="appController as vm">
+
+            <!-- bower:js -->
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="bower_components/toastr/toastr.js"></script>
+            <!-- endbower -->
+            <!-- inject:js -->
+            <script src="/app/app.js"></script>
+            <script src="/app/appController.js"></script>
+            <script src="/app/queryFactory.js"></script>
+            <!-- endinject -->
+        </body>
+>>>>>>> origin/master
 </html>
