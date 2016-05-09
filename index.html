@@ -122,8 +122,11 @@
                         <i class="">{{trail.city}}, {{trail.state}}</i>
                         <h3>{{trail.name}}</h3>
                         <p class="text-muted">
-                            <iframe width="320" height="180" ng-src="{{vm.trustSrc(trail.videos[0].id.videoId)}}" frameborder="0" allowfullscreen></iframe> 
+                            <iframe width="320" height="180" ng-src="{{vm.trustSrc(trail.selectedVideo)}}" frameborder="0" allowfullscreen></iframe> 
                         </p>
+                        <div class="row">
+                            <img style="padding:5px; padding-top: 10px; padding-bottom: 0px;" ng-repeat="video in trail.videos" ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="vm.selectVideo(trail, video)">
+                        </div>
                     </div>
                 </div>
                 

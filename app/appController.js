@@ -17,6 +17,10 @@
 			return $sce.trustAsResourceUrl(src);
 		}
 
+		vm.selectVideo = function(trail, video){
+			trail.selectedVideo = video.id.videoId;
+		}
+
 		vm.getTrails = function(){
 			trailFactory.getData(vm.name, vm.city, vm.state)
 			.then(function(response){
@@ -26,6 +30,7 @@
 					queryFactory.getData(url)
 					.then(function(response){
 						element.videos = response.data.items;	
+						element.selectedVideo = element.videos[0].id.videoId
 						console.log(element.videos[0].id.videoId)
 					}, function(error){
 						$log.error("Could not get data.");
