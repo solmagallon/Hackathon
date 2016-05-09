@@ -125,7 +125,10 @@
                             <iframe width="320" height="180" ng-src="{{vm.trustSrc(trail.selectedVideo)}}" frameborder="0" allowfullscreen></iframe> 
                         </p>
                         <div class="row">
-                            <img style="padding:5px; padding-top: 10px; padding-bottom: 0px;" ng-repeat="video in trail.videos" ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="vm.selectVideo(trail, video)">
+                            <div ng-repeat="video in trail.videos" >
+                                <img style="padding:5px; padding-top: 10px; padding-bottom: 0px;" ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="vm.selectVideo(trail, video)">
+                                <div>{{video.snippet.title}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
