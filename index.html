@@ -51,9 +51,7 @@
         </div>
     </nav>
 
-<video controls>
-    <source src="https://youtu.be/-7U3OjEK4EM" type="video/mp4">
-</video>
+
 
     <header>
         <div class="header-content">
@@ -123,9 +121,7 @@
                         <i class="">{{trail.city}}, {{trail.state}}</i>
                         <h3>{{trail.name}}</h3>
                         <p class="text-muted">
-                            <video controls> 
-                                <source ng-src="{{vm.trustSrc(trail.videos[0].id.videoId)}}">
-                            </video>
+                            <iframe width="320" height="180" ng-src="{{vm.trustSrc(trail.videos[0].id.videoId)}}" frameborder="0" allowfullscreen></iframe> 
                         </p>
                     </div>
                 </div>

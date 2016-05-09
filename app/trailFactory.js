@@ -15,7 +15,7 @@
 		function getData(name="", city="", state=""){
 			var defer = $q.defer();
 			console.log("getData called")
-			// var s = JSON.stringify({state_cont: "California"});
+
 			$http({
 				method:'GET',
 				url: 'https://trailapi-trailapi.p.mashape.com',
