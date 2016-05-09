@@ -13,6 +13,7 @@
 		return service;
 
 		function getData(url){
+			const VIDEO_URL = "https://www.youtube.com/embed/";
 			var defer = $q.defer();
 			$http({
 				method:'GET',
@@ -21,6 +22,10 @@
 				if (typeof response.data === 'object'){
 					toastr.success('Data retrieved successfully.');
 					defer.resolve(response);
+					console.log(response.data)
+					angular.forEach(response.data.items, function(element){
+						element.id.videoId = VIDEO_URL + element.id.videoId;
+					});
 				} else {
 					toastr.warning('No data retrieved.')
 				}

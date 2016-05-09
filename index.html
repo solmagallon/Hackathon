@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -12,7 +12,7 @@
     <title>Origin Hackathon Project</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="bower_components/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
 
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
@@ -41,7 +41,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-controller="appController as vm">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -50,6 +50,10 @@
             </div>
         </div>
     </nav>
+
+<video controls>
+    <source src="https://youtu.be/-7U3OjEK4EM" type="video/mp4">
+</video>
 
     <header>
         <div class="header-content">
@@ -114,15 +118,19 @@
         <div class="container">
             <div class="row">
                 
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center" ng-repeat="trail in vm.trails">
                     <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
+                        <i class="">{{trail.city}}, {{trail.state}}</i>
+                        <h3>{{trail.name}}</h3>
+                        <p class="text-muted">
+                            <video controls> 
+                                <source ng-src="{{vm.trustSrc(trail.videos[0].id.videoId)}}">
+                            </video>
+                        </p>
                     </div>
                 </div>
                 
-                <div class="col-lg-3 col-md-6 text-center">
+               <!--  <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class=""></i>
                         <h3>TRAIL NAME</h3>
@@ -145,11 +153,11 @@
                         <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
                     </div>
 
-                </div>
+                </div> -->
             </div>
         </div>    
 
-        <div class="container">
+<!--         <div class="container">
             <div class="row">
                 
                 <div class="col-lg-3 col-md-6 text-center">
@@ -185,7 +193,7 @@
 
                 </div>
             </div>
-        </div>    
+        </div>     -->
     </section>
 
     
@@ -265,13 +273,6 @@
 </div>
 
 
-
-
-
-
-
-
-
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -280,51 +281,29 @@
         </div>
     </section>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/toastr/toastr.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbower -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+        <script src="js/wow.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
+        <!-- inject:js -->
+        <script src="/app/app.js"></script>
+        <script src="/app/appController.js"></script>
+        <script src="/app/intercepterFactory.js"></script>
+        <script src="/app/queryFactory.js"></script>
+        <script src="/app/trailFactory.js"></script>
+        <!-- endinject -->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-
-</body>
-
-=======
-    <html lang="en" ng-app="app">
-        <head>
-            <meta charset="UTF-8">
-            <title></title>
-            <!-- bower:css -->
-            <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
-            <!-- endbower -->
-
-            <!-- inject:css -->
-            <!-- endinject -->
-        </head>
-
-        <body ng-controller="appController as vm">
-
-            <!-- bower:js -->
-            <script src="bower_components/angular/angular.js"></script>
-            <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-            <script src="bower_components/jquery/dist/jquery.js"></script>
-            <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-            <script src="bower_components/toastr/toastr.js"></script>
-            <!-- endbower -->
-            <!-- inject:js -->
-            <script src="/app/app.js"></script>
-            <script src="/app/appController.js"></script>
-            <script src="/app/intercepterFactory.js"></script>
-            <script src="/app/queryFactory.js"></script>
-            <script src="/app/trailFactory.js"></script>
-            <!-- endinject -->
-        </body>
->>>>>>> origin/master
+        <!-- Custom Theme JavaScript -->
+        <script src="js/creative.js"></script>
+    </body>
 </html>
