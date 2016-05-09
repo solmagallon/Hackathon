@@ -6,12 +6,6 @@
 	appController.$inject = ['queryFactory', 'trailFactory', '$log', '$sce'];
 	function appController(queryFactory, trailFactory, $log, $sce){
 		var vm = this;
-		const YOUTUBE_KEY = "&key=AIzaSyAGGi10zMvYlSfc8m_VsOIuesj-D1i6HeM";
-		const YOUTUBE_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&type=video&maxResults=8";
-
-		var query = YOUTUBE_URL;
-		query += YOUTUBE_KEY;
-		query += "&q=hiking+";
 
 		vm.trustSrc = function(src) {
 			return $sce.trustAsResourceUrl(src);
@@ -26,8 +20,8 @@
 			.then(function(response){
 				vm.trails = response.data.places;
 				angular.forEach(vm.trails, function(element){
-					var url = query + element.name;
-					queryFactory.getData(url)
+					// get the youtube data for each trail.  
+					queryFactory.getData(element)
 					.then(function(response){
 						element.videos = response.data.items;	
 						element.selectedVideo = element.videos[0].id.videoId

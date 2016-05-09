@@ -76,20 +76,21 @@
                      <form>
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="vm.name"
-                      
+                            <input type="text" class="form-control" id="name" placeholder="trail name" ng-model="vm.name">
+                        </div>
                         <div class="form-group">
                             <label for="city"></label>
                             <input type="text" class="form-control" id="city" placeholder="city" ng-model="vm.city">
-                       
+                        </div>
                         <div class="form-group">
                             <label for="text"></label>
-                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="vm.state"
-                     
+                            <input type="text" class="form-control" id="state" placeholder="state" ng-model="vm.state">
+                        </div>
+                        <br>
                         <div>                     
                             <a href="#about" ng-click="vm.getTrails()" class="btn btn-default btn-xl page-scrollb">Take a Hike</a>
                         </div>
-                        </form>
+                    </form>
                         </div>
 
                     <p class="text-faded">Put your boots on.</p>
@@ -123,79 +124,16 @@
                         <p class="text-muted">
                             <iframe width="420" height="280" ng-src="{{vm.trustSrc(trail.selectedVideo)}}" frameborder="0" allowfullscreen></iframe> 
                         </p>
-                        <div class="row">
-                            <div ng-repeat="video in trail.videos" >
-                                <img style="padding:5px; padding-top: 10px; padding-bottom: 0px;" ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="vm.selectVideo(trail, video)">
-                                <div>{{video.snippet.title}}</div>
+                        <div class="thumbnails">
+                            <div ng-repeat="video in trail.videos" class="thumbnail" ng-click="vm.selectVideo(trail, video)">
+                                <img ng-src="{{video.snippet.thumbnails.default.url}}" class="img-thumb">
+                                <div class="img-thumb">{{video.snippet.title}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-               <!--  <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-
-                </div> -->
             </div>
         </div>    
-
-<!--         <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class=""></i>
-                        <h3>TRAIL NAME</h3>
-                        <p class="text-muted">PUT EMBEDDED VIDEO HERE</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>     -->
     </section>
 
     

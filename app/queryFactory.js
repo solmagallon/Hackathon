@@ -35,7 +35,7 @@
 				url: query
 			}).then(function(response){
 				if (typeof response.data === 'object'){
-					toastr.success(trailName + ' data retrieved successfully.');
+					toastr.success(trail.name + ' data retrieved successfully.');
 					defer.resolve(response);
 					console.log(response.data)
 					angular.forEach(response.data.items, function(element){
